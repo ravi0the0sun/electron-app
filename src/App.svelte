@@ -30,12 +30,12 @@
 
 	<video></video>
 
-	<button id="startBtn" class="button is-primary"></button>
-	<button id="stopBtn" class="button is-warning"></button>
+	<button id="startBtn" class="button is-primary">Start</button>
+	<button id="stopBtn" class="button is-warning">Stop</button>
 
 	<hr />
 
-	<button id="videoSelect" class="button is-text"></button>
+	<button id="videoSelect" class="button is-text">Select Window</button>
 
 </main>
 
