@@ -1,10 +1,42 @@
 <script>
-	export let name;
+	import desktopCapture from 'index.js';
+	const videoElement = document.querySelector('video');
+	const startBtn = document.getElementById('startBtn');
+	const stopBtn = document.getElementById('stopBtn');
+	const videoSelectBtn = document.getElementById('videoSelect');
+
+	async function getVideoSources() {
+		const inputSources = await desktopCapture.getSources({
+			types: ['window', 'screen']
+		});
+		
+		const videoOptionMenu = Menu.builtFromTemplate(
+			inputSources.map(source => {
+				return {
+					lable: source.name,
+					click: () => selectSource(source)
+				};
+			})
+		);
+		videoOptionMenu.popup();
+	};
+
+
+
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>Electron app</h1>
+
+	<video></video>
+
+	<button id="startBtn" class="button is-primary"></button>
+	<button id="stopBtn" class="button is-warning"></button>
+
+	<hr />
+
+	<button id="videoSelect" class="button is-text"></button>
+
 </main>
 
 <style>
