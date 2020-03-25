@@ -21,6 +21,37 @@
 		videoOptionMenu.popup();
 	};
 
+	let mediaRecoder;
+	const recordedChunks = [];
+
+	async function selectSource(source) {
+		videoSelectBtn.innerText = source.name;
+
+		const constraints = {
+			audio: false,
+			video: {
+				mandatory: {
+					chromerMediaSource: 'desktop',
+					chromerMediaSourceId: source.id
+				}
+			}
+		}
+		const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+		videoElement.srcObject = stream;
+		videoElement.play();
+
+		const options= { mimeType: 'video/webm; codecs=vp9'};
+		mediaRecorder = new MediaRecoder(stream, options);
+
+		mediaRecoder.ondataavailable = handleDataAvailable;
+		mediaRecoder.onstop = handleStop;
+	};
+
+	async function handleStop(e) {
+		const blob = new Blob();
+	}
+
 
 
 </script>
