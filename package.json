@@ -15,7 +15,7 @@
     "svelte-start": "sirv public"
   },
   "keywords": [],
-  "author": "30342838",
+  "author": "ravi pun",
   "license": "MIT",
   "config": {
     "forge": {
@@ -51,14 +51,14 @@
     "sirv-cli": "^0.4.4"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.50",
+    "@electron-forge/cli": "^6.0.0-beta.52",
     "@electron-forge/maker-deb": "^6.0.0-beta.50",
     "@electron-forge/maker-rpm": "^6.0.0-beta.50",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.50",
     "@electron-forge/maker-zip": "^6.0.0-beta.50",
-    "electron": "8.1.1",
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "electron": "^9.1.0",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
